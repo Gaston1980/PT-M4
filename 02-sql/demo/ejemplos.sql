@@ -73,7 +73,7 @@ SELECT * FROM personas
   ORDER BY apellido;
 
 SELECT * FROM personas
-  ORDER BY nombre DESC;
+  ORDER BY nombre DESC; -- Z a la A --
 
 #default ASC
 -- SELECT * FROM personas
@@ -94,17 +94,21 @@ SELECT * FROM personas
   WHERE ciudad = 1
   ORDER BY nombre DESC; 
 
-SELECT * FROM personas WHERE nombre LIKE '%oni%'; 
+-- LIKE : case sensitive, importa mayuscuslas y minusculas
+SELECT * FROM personas WHERE nombre LIKE '%oni%'; -- % significa que adelante/atras puede haber otras letras
 SELECT * FROM personas WHERE nombre LIKE '%Toni%'; 
-SELECT * FROM personas WHERE nombre LIKE 'oni%'; 
+SELECT * FROM personas WHERE nombre LIKE 'oni%'; -- % significa que solo atras puede haber otras letras
 SELECT * FROM personas WHERE nombre LIKE '%an%';
-SELECT * FROM personas WHERE nombre LIKE '%no';
+SELECT * FROM personas WHERE nombre LIKE '%no'; -- % significa que solo adelante puede haber otras letras
 
+-- ILIKE: case insensitive, no importa mayusculas o minisculas
 SELECT * FROM personas WHERE apellido ILIKE 'Tralice'; 
 SELECT * FROM personas WHERE apellido ILIKE '%s%' ORDER BY nombre; 
 SELECT * FROM personas WHERE apellido ILIKE 'sca%'; 
 
-SELECT DISTINCT nombre FROM personas; 
+
+
+SELECT DISTINCT nombre FROM personas; -- solo mostrara la columna "nombre"
 
 SELECT DISTINCT nombre, apellido FROM personas; 
 
